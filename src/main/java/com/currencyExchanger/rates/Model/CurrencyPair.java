@@ -8,30 +8,19 @@ import java.util.*;
 @Getter
 @Setter
 public final class CurrencyPair implements Comparable<CurrencyPair> {
-    private Currency base;
+    private final Currency base;
 
-    private Currency counter;
+    private final Currency counter;
 
-    private Date date;
+    private final Date date;
 
-    private String currencyPair;
+    private final Double valuePair;
 
-    private Double valuePair;
-
-    private Map<CurrencyPair, Double> allCurrencyPair;
-
-    private Map<Currency, Double> allCurrency;
-
-    public CurrencyPair(Currency base, Currency counter, Date date) {
+    public CurrencyPair(Currency base, Currency counter, Date date,Double valuePair) {
         this.base = base;
         this.counter = counter;
         this.date = date;
-        allCurrencyPair.put(this,createValuePair(base,counter));
-    }
-
-    private double createValuePair(Currency base, Currency counter){
-         valuePair = allCurrency.get(counter) * 100 / allCurrency.get(base);
-         return valuePair;
+        this.valuePair = valuePair;
     }
 
     @Override
@@ -58,5 +47,15 @@ public final class CurrencyPair implements Comparable<CurrencyPair> {
         else {
             return 0;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "CurrencyPair{" +
+                "base=" + base +
+                ", counter=" + counter +
+                ", date=" + date +
+                ", valuePair=" + valuePair +
+                '}';
     }
 }
