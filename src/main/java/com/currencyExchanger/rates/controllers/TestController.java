@@ -1,5 +1,6 @@
 package com.currencyExchanger.rates.controllers;
 
+import com.currencyExchanger.rates.Config.JDBCPostgreSQLConnect;
 import com.currencyExchanger.rates.Service.RatesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,5 +19,7 @@ public class TestController {
     @GetMapping(value = "test")
     public void rates(){
         ratesService.streamMap();
+        JDBCPostgreSQLConnect.connection();
+
     }
 }
