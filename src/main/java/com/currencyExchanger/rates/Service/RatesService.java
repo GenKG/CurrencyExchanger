@@ -1,13 +1,24 @@
 package com.currencyExchanger.rates.Service;
 
+import com.currencyExchanger.rates.Config.JDBCPostgreSQLConnect;
+import com.currencyExchanger.rates.DAO.CurrencyPairDAO;
+import com.currencyExchanger.rates.DTO.CurrencyPairDTO;
 import com.currencyExchanger.rates.Model.Currency;
 import com.currencyExchanger.rates.Model.CurrencyPair;
 import com.currencyExchanger.rates.Util.*;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.*;
 
-@Controller
+@Service
 public class RatesService {
+    private CurrencyPairDAO dao;
+
+    @Autowired
+    public RatesService(CurrencyPairDAO dao) {
+        this.dao = dao;
+    }
 
     public List<CurrencyPair> getAllRates(Integer rateSize){
         List<CurrencyPair> listPair = new ArrayList<>();
@@ -40,6 +51,23 @@ public class RatesService {
                 .sorted(new CurrencyPairValueComparator().reversed())
                 .limit(5)
                 .forEach(System.out::println);
+    }
+
+    public void allSQLQuery(){
+        JDBCPostgreSQLConnect.connection();
+        System.out.println("get all CurrencyPair");
+        System.out.println("-----------------------");
+        dao.getAll().forEach(System.out::println);
+        System.out.println("-----------------------");
+        System.out.println("Get dto by id: " + dao.getDTOById(5).toString());
+        System.out.println("-----------------------");
+        CurrencyPairDTO dto = new CurrencyPairDTO();
+    }
+
+    public CurrencyPair getPojo(CurrencyPair entity) {
+        CurrencyPairDTO dto= dao.getDTOByDTO(MappingUtils.mapToPairDTO(entity));
+        System.out.println(MappingUtils.mapToPairEntity(dto));
+        return MappingUtils.mapToPairEntity(dto);
     }
 
 }

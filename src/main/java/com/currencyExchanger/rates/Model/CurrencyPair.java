@@ -1,19 +1,25 @@
 package com.currencyExchanger.rates.Model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import java.util.*;
 
-
-@Getter
-@Setter
+@Accessors(chain = true)
+@Entity
+@Data
 public final class CurrencyPair implements Comparable<CurrencyPair> {
+    @Column
     private final Currency base;
-
+    @Column
     private final Currency counter;
-
+    @Column
     private final Date date;
-
+    @Column
     private final Double valuePair;
 
     public CurrencyPair(Currency base, Currency counter, Date date,Double valuePair) {
