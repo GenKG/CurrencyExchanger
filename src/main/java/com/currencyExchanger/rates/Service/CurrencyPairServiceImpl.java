@@ -1,9 +1,13 @@
 package com.currencyExchanger.rates.Service;
 
 import com.currencyExchanger.rates.DAO.CurrencyPairRepository;
+import com.currencyExchanger.rates.DTO.CurrencyPairDTO;
 import com.currencyExchanger.rates.Model.CurrencyPair;
+import com.currencyExchanger.rates.Util.CurrencyPairMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -17,18 +21,21 @@ public class CurrencyPairServiceImpl implements CurrencyPairService {
     }
 
     @Override
-    public List<CurrencyPair> getAll() {
-        return repository.findAll();
+    public List<CurrencyPairDTO> getAll() {
+        List<CurrencyPair> pojoPairList = repository.findAll();
+        return CurrencyPairMapper.INSTANCE.listToDTO(pojoPairList);
     }
 
     @Override
-    public CurrencyPair getCurrencyPairById(Long id) {
-        return repository.findById(id).orElse(null);
+    public CurrencyPairDTO getCurrencyPairById(Long id) {
+        CurrencyPair pojoPair = repository.findById(id).orElse(null);
+        return CurrencyPairMapper.INSTANCE.toDTO(pojoPair);
     }
 
     @Override
-    public CurrencyPair save(CurrencyPair currencyPair) {
-        return repository.save(currencyPair);
+    public CurrencyPairDTO save(CurrencyPair currencyPair) {
+        CurrencyPair pojoPair = repository.save(currencyPair);
+        return CurrencyPairMapper.INSTANCE.toDTO(pojoPair);
     }
 
     @Override

@@ -1,15 +1,16 @@
 package com.currencyExchanger.rates.Service;
 
+import com.currencyExchanger.rates.DTO.CurrencyPairDTO;
 import com.currencyExchanger.rates.Model.CurrencyPair;
 
 import java.util.List;
 
 public interface CurrencyPairService {
-    List<CurrencyPair> getAll();
+    List<CurrencyPairDTO> getAll();
 
-    CurrencyPair getCurrencyPairById(Long id);
+    CurrencyPairDTO getCurrencyPairById(Long id);
 
-    CurrencyPair save(CurrencyPair currencyPair);
+    CurrencyPairDTO save(CurrencyPair currencyPair);
 
     void delete(Long id);
 

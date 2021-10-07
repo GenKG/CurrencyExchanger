@@ -1,5 +1,6 @@
 package com.currencyExchanger.rates.controllers;
 
+import com.currencyExchanger.rates.DTO.CurrencyPairDTO;
 import com.currencyExchanger.rates.Model.CurrencyPair;
 import com.currencyExchanger.rates.Service.CurrencyPairServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +23,17 @@ public class CurrencyController {
     }
 
     @GetMapping(value = {"/{id}"})
-    public CurrencyPair get(@PathVariable("id") Long id){
+    public CurrencyPairDTO get(@PathVariable("id") Long id){
         return currencyPairService.getCurrencyPairById(id);
     }
 
     @GetMapping
-    public List<CurrencyPair> getAll(){
+    public List<CurrencyPairDTO> getAll(){
        return currencyPairService.getAll();
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public CurrencyPair save(@RequestBody CurrencyPair currencyPair){
+    public CurrencyPairDTO save(@RequestBody CurrencyPair currencyPair){
         return currencyPairService.save(currencyPair);
     }
 
