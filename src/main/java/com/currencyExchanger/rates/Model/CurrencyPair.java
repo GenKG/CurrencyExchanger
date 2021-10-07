@@ -1,47 +1,36 @@
 package com.currencyExchanger.rates.Model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.*;
 
-@Accessors(chain = true)
 @Entity
 @Data
-public final class CurrencyPair implements Comparable<CurrencyPair> {
-    @Column
-    private final Currency base;
-    @Column
-    private final Currency counter;
-    @Column
-    private final Date date;
-    @Column
-    private final Double valuePair;
+@Table(name = "currency_pair",schema = "public")
+@AllArgsConstructor
+@NoArgsConstructor
+public  class CurrencyPair  implements Comparable<CurrencyPair> {
 
-    public CurrencyPair(Currency base, Currency counter, Date date,Double valuePair) {
-        this.base = base;
-        this.counter = counter;
-        this.date = date;
-        this.valuePair = valuePair;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private  Long id;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CurrencyPair that = (CurrencyPair) o;
-        return base == that.base &&
-                counter == that.counter;
-    }
+    @Column(name = "currency_base")
+    @Enumerated(EnumType.STRING)
+    private  Currency base;
 
-    @Override
-    public int hashCode() {
-        return base.hashCode() ^ counter.hashCode();
-    }
+    @Column(name = "currency_counter")
+    @Enumerated(EnumType.STRING)
+    private  Currency counter;
+
+    @Column(name = "date")
+    private  Date date;
+    
+    @Column(name = "value")
+    private  Double valuePair;
 
     @Override
     public int compareTo(CurrencyPair o) {
@@ -53,15 +42,5 @@ public final class CurrencyPair implements Comparable<CurrencyPair> {
         else {
             return 0;
         }
-    }
-
-    @Override
-    public String toString() {
-        return "CurrencyPair{" +
-                "base=" + base +
-                ", counter=" + counter +
-                ", date=" + date +
-                ", valuePair=" + valuePair +
-                '}';
     }
 }

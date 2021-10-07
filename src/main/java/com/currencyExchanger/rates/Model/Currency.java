@@ -1,6 +1,8 @@
 package com.currencyExchanger.rates.Model;
 
+
 public enum  Currency {
+
     AED("AED"),
     AFN("AFN"),
     ALL("ALL"),
