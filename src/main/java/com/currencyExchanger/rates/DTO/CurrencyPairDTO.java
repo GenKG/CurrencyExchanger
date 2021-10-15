@@ -4,6 +4,8 @@ import com.currencyExchanger.rates.Model.Currency;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.mapstruct.AfterMapping;
+
 import java.util.Date;
 @Data
 @AllArgsConstructor

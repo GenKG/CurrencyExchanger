@@ -2,21 +2,35 @@ package com.currencyExchanger.rates.Util;
 
 import com.currencyExchanger.rates.DTO.CurrencyPairDTO;
 import com.currencyExchanger.rates.Model.CurrencyPair;
-import org.mapstruct.Mapper;
+import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Mapper
-public interface CurrencyPairMapper {
-    CurrencyPairMapper INSTANCE = Mappers.getMapper(CurrencyPairMapper.class);
+public abstract class CurrencyPairMapper {
+    public static CurrencyPairMapper INSTANCE = Mappers.getMapper(CurrencyPairMapper.class);
 
-    CurrencyPair toPojo(CurrencyPairDTO dtoPair);
+    public abstract CurrencyPair toPojo(CurrencyPairDTO dtoPair);
 
-    CurrencyPairDTO toDTO(CurrencyPair currencyPair);
+    public abstract CurrencyPairDTO toDTO(CurrencyPair currencyPair);
 
-    List<CurrencyPairDTO> listToDTO(List<CurrencyPair> pojoPair);
+    @AfterMapping
+    void changeDate(CurrencyPair entity,@MappingTarget CurrencyPairDTO dtoPair) {
+        try {
+            Date format = new SimpleDateFormat("dd-MM-yyyy").parse(entity.getDate().toString());
+            dtoPair.setDate(format);
+        } catch (ParseException e){
+            e.printStackTrace();
+        }
+    }
 
-    List<CurrencyPair> listToPojo(List<CurrencyPairDTO> dtoPair);
+    public abstract List<CurrencyPairDTO> listToDTO(List<CurrencyPair> pojoPair);
+
+    public abstract List<CurrencyPair> listToPojo(List<CurrencyPairDTO> dtoPair);
 
 }
