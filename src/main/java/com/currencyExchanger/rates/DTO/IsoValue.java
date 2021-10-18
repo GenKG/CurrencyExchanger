@@ -25,4 +25,5 @@ public class IsoValue {
 
     @JsonProperty("Previous")
     private Double previous;
+
 }

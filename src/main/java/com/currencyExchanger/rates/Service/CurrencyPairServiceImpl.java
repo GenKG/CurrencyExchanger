@@ -6,8 +6,6 @@ import com.currencyExchanger.rates.Model.CurrencyPair;
 import com.currencyExchanger.rates.Util.CurrencyPairMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
