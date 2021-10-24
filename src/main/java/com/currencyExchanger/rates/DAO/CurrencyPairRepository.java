@@ -21,4 +21,9 @@ public interface CurrencyPairRepository extends JpaRepository<CurrencyPair, Long
                    @Param("date") Date date,
                    @Param("value") Double value,
                    @Param("id") Long id);
+    @Transactional
+    @Query("SELECT cp.valuePair FROM CurrencyPair as cp where cp.base = :base and cp.counter = :counter and cp.date = :date")
+    Double getPairByDate(@Param("base") Currency base,
+                         @Param("counter") Currency counter,
+                         @Param("date") Date date);
 }

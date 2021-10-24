@@ -1,12 +1,16 @@
 package com.currencyExchanger.rates.controllers;
 
 import com.currencyExchanger.rates.DTO.CurrencyPairDTO;
+import com.currencyExchanger.rates.Model.Currency;
 import com.currencyExchanger.rates.Model.CurrencyPair;
 import com.currencyExchanger.rates.Service.CurrencyPairServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -42,4 +46,10 @@ public class CurrencyController {
         currencyPairService.delete(id);
     }
 
+    @GetMapping(value = "/{date}/{base}/{counter}")
+    public Double searchPair(@PathVariable("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date,
+                           @PathVariable("base")Currency base,
+                           @PathVariable("counter") Currency counter) {
+        return currencyPairService.getPairByDate(base, counter, date);
+    }
 }

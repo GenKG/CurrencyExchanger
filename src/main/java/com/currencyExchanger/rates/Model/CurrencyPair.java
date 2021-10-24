@@ -32,6 +32,13 @@ public  class CurrencyPair  implements Comparable<CurrencyPair> {
     @Column(name = "value")
     private  Double valuePair;
 
+    public CurrencyPair(Currency base, Currency counter, Date date, Double valuePair) {
+        this.base = base;
+        this.counter = counter;
+        this.date = date;
+        this.valuePair = valuePair;
+    }
+
     @Override
     public int compareTo(CurrencyPair o) {
         if (o.date.getTime() > this.date.getTime())
