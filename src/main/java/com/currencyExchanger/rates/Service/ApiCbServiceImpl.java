@@ -47,6 +47,8 @@ public class ApiCbServiceImpl implements ApiCbrService {
         return valuePair;
     }
 
+    //Сохранение полученных данных в базу
+    //TODO: необходимо вынести в отдельный класс где будет содержаться вся логика. По SOLID
     private void saveData(Currency base, Currency counter, Date date, Double valuePair){
         CurrencyPair pair = new CurrencyPair(base,counter,date,valuePair);
         repository.save(pair);

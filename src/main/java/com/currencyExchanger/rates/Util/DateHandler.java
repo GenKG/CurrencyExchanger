@@ -14,6 +14,7 @@ public class DateHandler extends StdDeserializer<Date>
     public DateHandler(){
         this(null);
     }
+
     public DateHandler(Class<?> clazz){
         super(clazz);
     }

@@ -1,4 +1,4 @@
-package com.currencyExchanger.rates.controllers;
+package com.currencyExchanger.rates.Controllers;
 
 import com.currencyExchanger.rates.DTO.CurrencyPairDTO;
 import com.currencyExchanger.rates.Model.Currency;
@@ -46,6 +46,8 @@ public class CurrencyController {
         currencyPairService.delete(id);
     }
 
+
+    //Получение валютного курса на конкретную дату
     @GetMapping(value = "/{date}/{base}/{counter}")
     public Double searchPair(@PathVariable("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date,
                            @PathVariable("base")Currency base,

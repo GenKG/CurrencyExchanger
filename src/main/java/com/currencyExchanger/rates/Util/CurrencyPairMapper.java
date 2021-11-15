@@ -21,8 +21,10 @@ public abstract class CurrencyPairMapper {
     @AfterMapping
     void changeDate(CurrencyPair entity,@MappingTarget CurrencyPairDTO dtoPair) {
         try {
+            System.out.println(entity);
             Date format = new SimpleDateFormat("dd-MM-yyyy").parse(entity.getDate().toString());
-            dtoPair.setDate(format);
+            System.out.println(format);
+            //dtoPair.setDate(format);
         } catch (ParseException e){
             e.printStackTrace();
         }

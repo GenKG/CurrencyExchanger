@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,7 +16,7 @@ public class CurrencyPairDTO {
 
     private Currency counter;
 
-    private Date date;
+    private String date;
 
     private Double valuePair;
 }

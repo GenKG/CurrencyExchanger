@@ -54,6 +54,7 @@ public class CurrencyPairServiceImpl implements CurrencyPairService {
     @Override
     public Double getPairByDate(Currency base, Currency counter, Date date) {
         Double value = repository.getPairByDate(base,counter,date);
+        //Если не находим в базе, то обращаемся к АПИ ЦБ
         if (value == null){
             value = cbService.getValueForPair(base,counter);
         }
