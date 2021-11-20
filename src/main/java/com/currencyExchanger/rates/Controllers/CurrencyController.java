@@ -3,6 +3,7 @@ package com.currencyExchanger.rates.Controllers;
 import com.currencyExchanger.rates.DTO.CurrencyPairDTO;
 import com.currencyExchanger.rates.Model.Currency;
 import com.currencyExchanger.rates.Model.CurrencyPair;
+import com.currencyExchanger.rates.Service.CurrencyPairService;
 import com.currencyExchanger.rates.Service.CurrencyPairServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -19,7 +20,7 @@ import java.util.List;
 public class CurrencyController {
     public static final String REST_URL = "/currencyPair";
 
-   private final CurrencyPairServiceImpl currencyPairService;
+   private final CurrencyPairService currencyPairService;
 
    @Autowired
     public CurrencyController(CurrencyPairServiceImpl currencyPairService) {
