@@ -15,10 +15,10 @@ import javax.annotation.PostConstruct;
 public class ApiCbServiceImpl implements ApiCbrService {
     private  CbrDTO cbrDTO;
 
-    private CbClient cbClient;
+    private final CbClient cbClient;
 
     @Qualifier("cbApiOperations")
-    private CurrencyPairOperations cbApiOperations;
+    private final CurrencyPairOperations cbApiOperations;
 
     @Autowired
     public ApiCbServiceImpl(CbClient cbClient, CurrencyPairOperations cbApiOperations) {

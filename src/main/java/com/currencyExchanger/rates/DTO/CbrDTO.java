@@ -9,7 +9,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@Getter
+@Setter
 public class CbrDTO {
 
     @JsonDeserialize(using = DateHandler.class)

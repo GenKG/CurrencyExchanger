@@ -2,11 +2,16 @@ package com.currencyExchanger.rates.DTO;
 
 public enum ISO {
     AUD,
+    AED,
+    EGP,
+    IDR,
     AZN,
     GBP,
     AMD,
     BYN,
     BGN,
+    QAR,
+    NZD,
     BRL,
     HUF,
     HKD,
@@ -25,6 +30,8 @@ public enum ISO {
     XDR,
     SGD,
     TJS,
+    THB,
+    RSD,
     TRY,
     TMT,
     UZS,
@@ -34,5 +41,7 @@ public enum ISO {
     CHF,
     ZAR,
     KRW,
+    VND,
+    GEL,
     JPY
 }

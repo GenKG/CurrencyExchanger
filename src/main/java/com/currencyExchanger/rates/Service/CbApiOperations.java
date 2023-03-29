@@ -10,7 +10,7 @@ import java.util.Date;
 @Service("cbApiOperations")
 public class CbApiOperations implements CurrencyPairOperations {
 
-    private CurrencyPairRepository repository;
+    private final CurrencyPairRepository repository;
 
     private CurrencyPair pair;
 
@@ -20,8 +20,8 @@ public class CbApiOperations implements CurrencyPairOperations {
     }
 
     @Override
-    public void saveNewValuePair(Currency base, Currency counter, Date date, Double valuePair) {
+    public CurrencyPair saveNewValuePair(Currency base, Currency counter, Date date, Double valuePair) {
         pair = new CurrencyPair(base,counter,date,valuePair);
-        repository.save(pair);
+        return repository.save(pair);
     }
 }
