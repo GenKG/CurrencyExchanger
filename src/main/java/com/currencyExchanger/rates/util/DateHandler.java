@@ -1,4 +1,4 @@
-package com.currencyExchanger.rates.Util;
+package com.currencyExchanger.rates.util;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;

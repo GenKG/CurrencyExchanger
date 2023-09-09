@@ -1,4 +1,4 @@
-package com.currencyExchanger.rates.Util;
+package com.currencyExchanger.rates.util;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package com.currencyExchanger.rates.Util;
+package com.currencyExchanger.rates.util;
 
 import java.time.LocalDate;
 import java.util.Date;

@@ -1,7 +1,7 @@
 package com.currencyExchanger.rates.DAO;
 
-import com.currencyExchanger.rates.Model.Currency;
-import com.currencyExchanger.rates.Model.CurrencyPair;
+import com.currencyExchanger.rates.model.Currency;
+import com.currencyExchanger.rates.model.CurrencyPair;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

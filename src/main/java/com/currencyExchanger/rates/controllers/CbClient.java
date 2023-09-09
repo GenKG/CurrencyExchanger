@@ -1,4 +1,4 @@
-package com.currencyExchanger.rates.Controllers;
+package com.currencyExchanger.rates.controllers;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
