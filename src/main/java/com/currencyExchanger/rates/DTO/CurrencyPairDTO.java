@@ -1,6 +1,6 @@
 package com.currencyExchanger.rates.DTO;
 
-import com.currencyExchanger.rates.Model.Currency;
+import com.currencyExchanger.rates.model.Currency;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

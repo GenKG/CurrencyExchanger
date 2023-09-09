@@ -1,4 +1,4 @@
-package com.currencyExchanger.rates.Model;
+package com.currencyExchanger.rates.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

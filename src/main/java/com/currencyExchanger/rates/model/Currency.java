@@ -1,4 +1,4 @@
-package com.currencyExchanger.rates.Model;
+package com.currencyExchanger.rates.model;
 
 
 public enum  Currency {

@@ -1,6 +1,6 @@
-package com.currencyExchanger.rates.Util;
+package com.currencyExchanger.rates.util;
 
-import com.currencyExchanger.rates.Model.Currency;
+import com.currencyExchanger.rates.model.Currency;
 
 import java.util.Comparator;
 

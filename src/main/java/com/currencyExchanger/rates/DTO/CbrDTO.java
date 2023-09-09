@@ -1,6 +1,6 @@
 package com.currencyExchanger.rates.DTO;
 
-import com.currencyExchanger.rates.Util.DateHandler;
+import com.currencyExchanger.rates.util.DateHandler;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.*;

@@ -1,10 +1,10 @@
-package com.currencyExchanger.rates.Controllers;
+package com.currencyExchanger.rates.controllers;
 
 import com.currencyExchanger.rates.DTO.CurrencyPairDTO;
-import com.currencyExchanger.rates.Model.Currency;
-import com.currencyExchanger.rates.Model.CurrencyPair;
-import com.currencyExchanger.rates.Service.CurrencyPairService;
-import com.currencyExchanger.rates.Service.CurrencyPairServiceImpl;
+import com.currencyExchanger.rates.model.Currency;
+import com.currencyExchanger.rates.model.CurrencyPair;
+import com.currencyExchanger.rates.service.CurrencyPairService;
+import com.currencyExchanger.rates.service.CurrencyPairServiceImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

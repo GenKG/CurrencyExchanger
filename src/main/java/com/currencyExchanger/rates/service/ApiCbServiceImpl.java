@@ -1,9 +1,9 @@
-package com.currencyExchanger.rates.Service;
+package com.currencyExchanger.rates.service;
 
-import com.currencyExchanger.rates.Controllers.CbClient;
+import com.currencyExchanger.rates.controllers.CbClient;
 import com.currencyExchanger.rates.DTO.CbrDTO;
 import com.currencyExchanger.rates.DTO.ISO;
-import com.currencyExchanger.rates.Model.Currency;
+import com.currencyExchanger.rates.model.Currency;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,8 @@
-package com.currencyExchanger.rates.Service;
+package com.currencyExchanger.rates.service;
 
 import com.currencyExchanger.rates.DAO.CurrencyPairRepository;
-import com.currencyExchanger.rates.Model.Currency;
-import com.currencyExchanger.rates.Model.CurrencyPair;
+import com.currencyExchanger.rates.model.Currency;
+import com.currencyExchanger.rates.model.CurrencyPair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;

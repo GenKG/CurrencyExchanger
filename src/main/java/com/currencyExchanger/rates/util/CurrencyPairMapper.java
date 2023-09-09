@@ -1,7 +1,7 @@
-package com.currencyExchanger.rates.Util;
+package com.currencyExchanger.rates.util;
 
 import com.currencyExchanger.rates.DTO.CurrencyPairDTO;
-import com.currencyExchanger.rates.Model.CurrencyPair;
+import com.currencyExchanger.rates.model.CurrencyPair;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 

@@ -1,7 +1,7 @@
-package com.currencyExchanger.rates.Service;
+package com.currencyExchanger.rates.service;
 
-import com.currencyExchanger.rates.Model.Currency;
-import com.currencyExchanger.rates.Model.CurrencyPair;
+import com.currencyExchanger.rates.model.Currency;
+import com.currencyExchanger.rates.model.CurrencyPair;
 
 import java.util.Date;
 

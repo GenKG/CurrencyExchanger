@@ -1,9 +1,9 @@
 package com.currencyExchanger.rates;
 
 import com.currencyExchanger.rates.DAO.CurrencyPairRepository;
-import com.currencyExchanger.rates.Model.Currency;
-import com.currencyExchanger.rates.Model.CurrencyPair;
-import com.currencyExchanger.rates.Service.CbApiOperations;
+import com.currencyExchanger.rates.model.Currency;
+import com.currencyExchanger.rates.model.CurrencyPair;
+import com.currencyExchanger.rates.service.CbApiOperations;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Before;
